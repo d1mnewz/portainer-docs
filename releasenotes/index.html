@@ -4686,38 +4686,40 @@
 <p>Read about the new and enhanced features in our latest releases here.</p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Portainer Business</label><div class="tabbed-content">
 <details class="tip" open="open"><summary>Release 2.4</summary><h4 id="fixes">Fixes</h4>
-<p><strong>Kubernetes</strong>
-* Linux ARM64
-* Linux ARM
-* Pods without workloads are now displayed as applications
-* Improved UI/UX of configurations for creation / edition
-* Introduced request of confirmation upon volume removal
-* Introduced the advanced deployment panel to each resource list view
-* Updated validation to prevent a user from exposing an application over an external load balancer with mixed protocols
-* Introduced the ability to display the access policy associated to the storage of a volume
-* Clarified advanced deployment feature
-* Clarified sensitive configuration creation
-* Clarified ingress controller configuration in the cluster setup view
-* Renamed the create entry from file button when creating a configuration
-* Improved validation warnings in the application creation / edition views
-* Removed extra whitespace in stacks and storage datatables
-* Fixed issue with access management feature on resource pools
-* Fixed issue with ability to retrieve configs when a config is a binary file
-* Fixed issue with advanced deployment feature on agent and Edge agent endpoints
-* Fixed an issue that would mark a sensitive configuration as external without owner after an update
-* Fixed issue with access to configuration details view for a configuration containing binary data
-* Fixed labels to display system labels first in the node details view
-* Fixed refresh issue on the view with the YAML panel selected
-* Fixed invalid display issue when accessing the load balancer panel from the application panel
-* Fixed issue when accessing the cluster setup incorrectly expanding the Endpoint sidebar
-* Fixed issue with exposed configuration keys over filesystem inside an application not being applied
-* Fixed issue when Adding a key to existing used configuration that would throw an error when editing an application using that configuration
-* Fixed an issue with the form validation in the configuration creation view
-* Fixed issue with resource pool “created” attribute not showing actual creation time
-* Fixed issue with ability to apply a note to a Pod type application
-* Fixed issue with creating Kubernetes resources with a username longer than 63 characters
-* Fixed issue with special characters in usernames when creating Kubernetes resources
-* Fixed issue with ability to retrieve config map error when trying to manager newly create resource pool</p>
+<p><strong>Fix an issue preventing a user from creating Kuberneres resources if they have a <code class="highlight"><span class="err">@</span></code> character in their username</strong></p>
+<ul>
+<li>Linux ARM64</li>
+<li>Linux ARM</li>
+<li>Pods without workloads are now displayed as applications</li>
+<li>Improved UI/UX of configurations for creation / edition</li>
+<li>Introduced request of confirmation upon volume removal</li>
+<li>Introduced the advanced deployment panel to each resource list view</li>
+<li>Updated validation to prevent a user from exposing an application over an external load balancer with mixed protocols</li>
+<li>Introduced the ability to display the access policy associated to the storage of a volume</li>
+<li>Clarified advanced deployment feature</li>
+<li>Clarified sensitive configuration creation</li>
+<li>Clarified ingress controller configuration in the cluster setup view</li>
+<li>Renamed the create entry from file button when creating a configuration</li>
+<li>Improved validation warnings in the application creation / edition views</li>
+<li>Removed extra whitespace in stacks and storage datatables</li>
+<li>Fixed issue with access management feature on resource pools</li>
+<li>Fixed issue with ability to retrieve configs when a config is a binary file</li>
+<li>Fixed issue with advanced deployment feature on agent and Edge agent endpoints</li>
+<li>Fixed an issue that would mark a sensitive configuration as external without owner after an update</li>
+<li>Fixed issue with access to configuration details view for a configuration containing binary data</li>
+<li>Fixed labels to display system labels first in the node details view</li>
+<li>Fixed refresh issue on the view with the YAML panel selected</li>
+<li>Fixed invalid display issue when accessing the load balancer panel from the application panel</li>
+<li>Fixed issue when accessing the cluster setup incorrectly expanding the Endpoint sidebar</li>
+<li>Fixed issue with exposed configuration keys over filesystem inside an application not being applied</li>
+<li>Fixed issue when Adding a key to existing used configuration that would throw an error when editing an application using that configuration</li>
+<li>Fixed an issue with the form validation in the configuration creation view</li>
+<li>Fixed issue with resource pool “created” attribute not showing actual creation time</li>
+<li>Fixed issue with ability to apply a note to a Pod type application</li>
+<li>Fixed issue with creating Kubernetes resources with a username longer than 63 characters</li>
+<li>Fixed issue with special characters in usernames when creating Kubernetes resources</li>
+<li>Fixed issue with ability to retrieve config map error when trying to manager newly create resource pool</li>
+</ul>
 </details>
 <p><br></p>
 <details class="- note"><summary>Release 2.0.1</summary><h4 id="fixes_1">Fixes</h4>
