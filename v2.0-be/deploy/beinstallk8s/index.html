@@ -4737,9 +4737,9 @@ Example: <code>kubectl patch storageclass local-path -p '{"metadata": {"annotati
 --set enterpriseEdition.enabled<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
 --set service.type<span class="o">=</span>ClusterIP <span class="se">\</span>
 --set ingress.enabled<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
---set ingress.annotations<span class="o">=</span><span class="s1">&#39;kubernetes.io/ingress.class: nginx&#39;</span> <span class="se">\</span>
+--set ingress.annotations.<span class="s1">&#39;kubernetes\.io/ingress\.class&#39;</span><span class="o">=</span>nginx <span class="se">\</span>
 --set ingress.hosts<span class="o">[</span><span class="m">0</span><span class="o">]</span>.host<span class="o">=</span>portainer.example.io <span class="se">\</span>
---set ingress.hosts<span class="o">[</span><span class="m">0</span><span class="o">]</span>.paths<span class="o">[</span><span class="m">0</span><span class="o">]</span>.path<span class="o">=</span>/
+--set ingress.hosts<span class="o">[</span><span class="m">0</span><span class="o">]</span>.paths<span class="o">[</span><span class="m">0</span><span class="o">]</span>.path<span class="o">=</span><span class="s2">&quot;/&quot;</span>
 </code></pre></div>
 </details>
 </div>
