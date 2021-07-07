@@ -5060,15 +5060,15 @@ frameborder="0" allowfullscreen class="video"></iframe>
 <li>Cluster Admin rights on your Kubernetes cluster. This is so Portainer can create the necessary <code class="highlight"><span class="no">ServiceAccount</span></code> and <code class="highlight"><span class="no">ClusterRoleBinding</span></code> for it to access the Kubernetes cluster.</li>
 <li>A default StorageClass configured (see below)</li>
 </ul>
-<p>By default, Portainer will expose the UI over the port <code class="highlight"><span class="mi">9000</span></code> and expose a TCP tunnel server over the port <code class="highlight"><span class="mi">8000</span></code>. The latter is optional and is only required if you plan to use the Edge compute features with Edge agents.</p>
-<p>To see the requirements, please, visit the page of <a href="/v2.0/deploy/requirements">requirements</a>.</p>
+<p>By default, Portainer will expose the UI over port <code class="highlight"><span class="mi">9000</span></code> and expose a TCP tunnel server over port <code class="highlight"><span class="mi">8000</span></code>. The latter is optional and is only required if you plan to use the Edge compute features with Edge agents.</p>
+<p>To learn more about the requirements please visit the <a href="/v2.0/deploy/requirements">requirements</a> page.</p>
 <div class="admonition warning">
 <p class="admonition-title">Agent Versions</p>
 <p>Always match the agent version to Portainer Server version. i.e., while installing or upgrading to Portainer 2.6 make sure all the agents are also version 2.6. </p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Access Control &amp; RBAC</p>
-<p>Kubernetres RBAC needs to enabled and working for Access Control to work properly in Portainer.</p>
+<p>Kubernetes RBAC needs to enabled and working for Access Control to work properly in Portainer.</p>
 </div>
 <h2 id="portainer-deployment"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg></span> Portainer Deployment</h2>
 <hr />

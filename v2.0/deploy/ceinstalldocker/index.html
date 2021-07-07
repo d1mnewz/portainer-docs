@@ -5057,8 +5057,8 @@
 <li>Administrator or sudo access on the machine that will host your Portainer instance.</li>
 <li>If you are using Docker Desktop on Windows you need to enable WSL2 if you need to run Linux containers.</li>
 </ul>
-<p>By default, Portainer will expose the UI over the port <code class="highlight"><span class="mi">9000</span></code> and expose a TCP tunnel server over the port <code class="highlight"><span class="mi">8000</span></code>. The latter is optional and is only required if you plan to use the Edge compute features with Edge agents.</p>
-<p>To see the requirements, please, visit the page of <a href="/v2.0/deploy/requirements">requirements</a>.</p>
+<p>By default, Portainer will expose the UI over port <code class="highlight"><span class="mi">9000</span></code> and expose a TCP tunnel server over port <code class="highlight"><span class="mi">8000</span></code>. The latter is optional and is only required if you plan to use the Edge compute features with Edge agents.</p>
+<p>To learn more about the requirements please visit the <a href="/v2.0/deploy/requirements">requirements</a> page.</p>
 <div class="admonition warning">
 <p class="admonition-title">Agent Versions</p>
 <p>Always match the agent version to Portainer Server version. i.e., while installing or upgrading to Portainer 2.6 make sure all the agents are also version 2.6. </p>
@@ -5182,15 +5182,15 @@ If your system does not have the mentioned command, you can run a container to r
 <p>You do not like our logo? Want to make Portainer more corporate? Don’t worry, you can easily switch for an external logo (it must be exactly 155px by 55px) using the <code>--logo flag</code>:</p>
 <p><div class="highlight"><pre><span></span><code>docker run -d -p <span class="m">9000</span>:9000 -p <span class="m">8000</span>:8000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce --logo <span class="s2">&quot;https://www.docker.com/sites/all/themes/docker/assets/images/brand-full.svg&quot;</span>
 </code></pre></div>
-This can also be completed via the GUI in the Portaner Settings menu</p>
+This can also be updated via the GUI in the Portainer Settings menu.</p>
 <h2 id="use-your-own-templates">Use your own templates</h2>
 <p>Portainer allows you to rapidly deploy containers using App Templates.</p>
 <p>By default Portainer templates will be used but you can also define your own templates.</p>
-<p>Note: at the moment, templates are only loaded once at first Portainer startup. If you already deployed a Portainer instance and want to use your own templates after this, you’ll need to clear any existing templates (default templates) via the HTTP API.</p>
+<p>Note: at the moment, templates are only loaded once at first Portainer startup. If you already deployed a Portainer instance and want to use your own templates after this, you’ll need to clear any existing templates (default templates) via the user interface or the HTTP API.</p>
 <p>Using the <code>--templates</code> flag you can specify an URL where the template file can be accessed via HTTP.</p>
 <div class="highlight"><pre><span></span><code>docker run -d -p <span class="m">9000</span>:9000 -p <span class="m">8000</span>:8000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce --templates http://my-host.my-domain/templates.json
 </code></pre></div>
-<p>Suggestion: You can host your template files in <a href="https://www.github.com">Github</a></p>
+<p>The template file must be accessible from Portainer without authentication. We suggest hosting the template files on <a href="https://www.github.com">Github</a>.</p>
 <h2 id="available-flags">Available flags</h2>
 <p>The following CLI flags are available:</p>
 <ul>
