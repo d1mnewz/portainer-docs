@@ -5334,7 +5334,7 @@ In the mean time please head over to YAML Manifests tab.</p>
 <p>After a few minutes, you will see that Kubernetes is running:</p>
 <p><img alt="kubernetes_running" src="../assets/windows10-4.png" /></p>
 <h3 id="portainer-server-deployment_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"/></svg></span> Portainer Server Deployment</h3>
-<p>Based on how you would like expose Portainer Service, Select an option below</p>
+<p>Based on how you would like expose the Portainer Service, select an option below:</p>
 <div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">NodePort</label><div class="tabbed-content">
 <p>Using the following command, Portainer will be available on port 30777.</p>
 <div class="highlight"><pre><span></span><code>kubectl apply -n portainer -f https://raw.githubusercontent.com/portainer/k8s/master/deploy/manifests/portainer/portainer-ee.yaml
@@ -5365,16 +5365,16 @@ In the mean time please head over to YAML Manifests tab.</p>
 <hr />
 <details class="tip" open="open"><summary>Regarding Persisting Data</summary><p>The charts/manifests will create a persistent volume for storing Portainer data, using the default StorageClass.</p>
 <p>In some Kubernetes clusters (microk8s), the default Storage Class simply creates hostPath volumes, which are not explicitly tied to a particular node. In a multi-node cluster, this can create an issue when the pod is terminated and rescheduled on a different node, "leaving" all the persistent data behind and starting the pod with an "empty" volume.</p>
-<p>While this behaviour is inherently a limitation of using hostPath volumes, a suitable workaround is to use add a nodeSelector to the deployment, which effectively "pins" the portainer pod to a particular node.</p>
+<p>While this behaviour is inherently a limitation of using hostPath volumes, a suitable workaround is to use add a nodeSelector to the deployment, which effectively "pins" the Portainer pod to a particular node.</p>
 <p>The nodeSelector can be added in the following ways:</p>
 <ol>
 <li>
-<p>Edit your own values.yaml and set the value of nodeSelector like this:</p>
+<p>Edit your own values.yaml and set the value of nodeSelector:</p>
 <pre><code>nodeSelector: kubernetes.io/hostname: \&lt;YOUR NODE NAME&gt;
 </code></pre>
 </li>
 <li>
-<p>Explicictly set the target node when deploying/updating the helm chart on the CLI, by including <code>--set nodeSelector.kubernetes.io/hostname=&lt;YOUR NODE NAME&gt;</code></p>
+<p>Explicitly set the target node when deploying/updating the helm chart on the CLI, by including <code>--set nodeSelector.kubernetes.io/hostname=&lt;YOUR NODE NAME&gt;</code></p>
 </li>
 <li>
 <p>If you've deployed Portainer via manifests, without Helm, run the following one-liner to "patch" the deployment, forcing the pod to always be scheduled on the node it's currently running on:</p>
