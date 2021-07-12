@@ -5051,14 +5051,14 @@
                 
                 
                 <h1 id="webhooks">Webhooks</h1>
-<p>You can use webhooks to cause an action in a service in response to a push event in a repository. Webhooks are POST requests sent to a URL you define in Docker Hub or another registry.</p>
+<p>You can use webhooks to trigger an action in a service in response to a push event in a repository. Webhooks are POST requests sent to a URL you define in Docker Hub or another registry.</p>
 <h2 id="enable-service-webhook">Enable Service Webhook</h2>
-<p>To enable a webhook for a service, go to <b>Services</b>, click in the service you want to set up the Weebhook, and enable the toogle <b>Service Webhook</b>.</p>
+<p>To enable a webhook for a service, go to <b>Services</b>, click on the service you want to set up the Webhook for, and enable the toggle <b>Service Webhook</b>.</p>
 <p><img alt="webhooks" src="../assets/1.png" /></p>
-<p>After you enable the toggle you will see the URL to configure your webhook in Docker Hub or another repository. do a click in copy to get the full URL.</p>
+<p>After you enable the toggle you will see the URL to configure your webhook in Docker Hub or another repository. Click the copy button to get the full URL.</p>
 <p><img alt="webhooks" src="../assets/2.png" /></p>
 <h2 id="examples">Examples</h2>
-<p>Here, you can find a few examples to understand how easy is to trigger the webhook.</p>
+<p>Here, you can find a few examples to understand how easy it is to trigger the webhook.</p>
 <h3 id="redeploy">Redeploy</h3>
 <div class="highlight"><pre><span></span><code>&lt;form action=&quot;http://192.168.1.12:9000/api/webhooks/638e6967-ef77-4906-8af8-236800621360&quot; method=&quot;post&quot;&gt;
   Redeploy with latest image of same tag &lt;input type=&quot;submit&quot; /&gt;
