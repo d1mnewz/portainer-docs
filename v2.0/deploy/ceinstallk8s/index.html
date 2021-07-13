@@ -5098,14 +5098,14 @@ Example: <code>kubectl patch storageclass local-path -p '{"metadata": {"annotati
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>helm repo update
 </code></pre></div>
-<p>Based on how you would like expose the Portainer Service, select an option below:</p>
+<p>Based on how you would like to expose the Portainer Service, select an option below:</p>
 <div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">NodePort</label><div class="tabbed-content">
 <p>Using the following command, Portainer will be available on port 30777.</p>
 <div class="highlight"><pre><span></span><code>helm install --create-namespace -n portainer portainer portainer/portainer
 </code></pre></div>
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Ingress</label><div class="tabbed-content">
-<p>Using the following command, Poratainer service will be assigned a Cluster IP. You should use this with an Ingress, see Chart Configuration Options for Ingress related options. </p>
+<p>Using the following command, the Portainer service will be assigned a Cluster IP. You should use this with an Ingress, see Chart Configuration Options for Ingress related options. </p>
 <div class="highlight"><pre><span></span><code>helm install --create-namespace -n portainer portainer portainer/portainer <span class="se">\</span>
 --set service.type<span class="o">=</span>ClusterIP
 </code></pre></div>
@@ -5363,7 +5363,7 @@ In the meantime please head over to YAML Manifests tab.</p>
 </div>
 <hr />
 <details class="tip" open="open"><summary>Regarding Persisting Data</summary><p>The charts/manifests will create a persistent volume for storing Portainer data, using the default StorageClass.</p>
-<p>In some Kubernetes clusters (microk8s), the default Storage Class simply creates hostPath volumes, which are not explicitly tied to a particular node. In a multi-node cluster, this can create an issue when the pod is terminated and rescheduled on a different node, "leaving" all the persistent data behind and starting the pod with an "empty" volume.</p>
+<p>In some Kubernetes clusters (for example microk8s), the default StorageClass simply creates hostPath volumes, which are not explicitly tied to a particular node. In a multi-node cluster, this can create an issue when the pod is terminated and rescheduled on a different node, "leaving" all the persistent data behind and starting the pod with an "empty" volume.</p>
 <p>While this behaviour is inherently a limitation of using hostPath volumes, a suitable workaround is to use add a nodeSelector to the deployment, which effectively "pins" the Portainer pod to a particular node.</p>
 <p>The nodeSelector can be added in the following ways:</p>
 <ol>
@@ -5373,7 +5373,7 @@ In the meantime please head over to YAML Manifests tab.</p>
 </code></pre>
 </li>
 <li>
-<p>Explicitly set the target node when deploying/updating the helm chart on the CLI, by including <code>--set nodeSelector.kubernetes.io/hostname=&lt;YOUR NODE NAME&gt;</code></p>
+<p>Explicitly set the target node when deploying/updating the Helm chart on the CLI, by including <code>--set nodeSelector.kubernetes.io/hostname=&lt;YOUR NODE NAME&gt;</code></p>
 </li>
 <li>
 <p>If you've deployed Portainer via manifests, without Helm, run the following one-liner to "patch" the deployment, forcing the pod to always be scheduled on the node it's currently running on:</p>
