@@ -16,7 +16,7 @@
     
     
       
-        <title>Allow/Disallow over-commitment of resources - Documentation</title>
+        <title>K8s: Allow/Disallow over-commitment of resources - Documentation</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Allow/Disallow over-commitment of resources
+              K8s: Allow/Disallow over-commitment of resources
             
           </span>
         </div>
@@ -1692,52 +1692,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../lb/" class="md-nav__link">
-        Enable use of external load balancer
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Allow/Disallow over-commitment of resources
-      </a>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../namespaces/" class="md-nav__link">
-        Limit usage of default namespace
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
-        Security Options
+      <a href="../apps/" class="md-nav__link">
+        App Templates
       </a>
     </li>
   
@@ -1760,9 +1716,41 @@
   
   
     <li class="md-nav__item">
-      <a href="../apps/" class="md-nav__link">
-        App Templates
+      <a href="../lb/" class="md-nav__link">
+        K8s: Enable use of external load balancer
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/" class="md-nav__link">
+        K8s: Limit usage of default namespace
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        K8s: Allow/Disallow over-commitment of resources
+      </a>
+      
     </li>
   
 
@@ -1774,6 +1762,18 @@
     <li class="md-nav__item">
       <a href="../host_management/" class="md-nav__link">
         Enable Host Management Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security Settings
       </a>
     </li>
   
@@ -2106,7 +2106,7 @@
   
     <li class="md-nav__item">
       <a href="../../../v2.0/stacks/inspect/" class="md-nav__link">
-        Inspect a Stack
+        Edit/Inspect a Stack
       </a>
     </li>
   
@@ -3320,6 +3320,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../stacks/inspect/" class="md-nav__link">
+        Edit/Inspect a Stack
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../stacks/template/" class="md-nav__link">
         Create a template from a Stack
       </a>
@@ -3334,18 +3346,6 @@
     <li class="md-nav__item">
       <a href="../../stacks/duplicate_migration/" class="md-nav__link">
         Duplicate / Migrate Stacks
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../stacks/inspect/" class="md-nav__link">
-        Inspect a Stack
       </a>
     </li>
   
@@ -5127,17 +5127,20 @@
                 
                 
                 <h1 id="over-commitment-of-resources-kubernetes-only">Over Commitment of Resources (Kubernetes Only)</h1>
-<p>With Portainer Business Edition, you can use your resources on full where are most needed. You can configure more resources to namespaces than is physically available in the cluster.</p>
-<p><b>Important</b>: By ENABLING resource over-commit, you are able to assign more resources to namespaces than is physically available in the cluster. This may lead to unexpected deployment failures if there is insufficient resources to service demand. By DISABLING resource over-commit (highly recommended), you are only able to assign resources to namespaces that are less (in aggregate) than the cluster total minus any system resource reservation.</p>
+<p>With Portainer you can use your resources to the fullest extent and where they are most needed. You can allocate more resources to namespaces than are physically available in the cluster.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By <b>enabling</b> resource over-commit, you are able to assign more resources to namespaces than are physically available in the cluster. This may lead to unexpected deployment failures if there are insufficient resources to service demand. By <b>disabling</b> resource over-commit (highly recommended), you are only able to assign resources to namespaces that are less (in aggregate) than the cluster total minus any system resource reservation.</p>
+</div>
 <h2 id="enabling-over-commitment-of-resources">Enabling Over Commitment of Resources</h2>
-<p>To do this, you need to open Portainer Business Edition, go to <b>Cluster</b> and then to <b>Setup</b>. After that, you need to enable the toggle <b>Allow resource over-commit</b>.</p>
+<p>To enable resource over-commit, go to <b>Cluster</b> and then to <b>Setup</b>. Then enable the toggle <b>Allow resource over-commit</b>.</p>
 <p><img alt="namespace" src="../assets/over.png" /></p>
-<p>After you enabled the toggle, scroll down and click <b>Save Configuration</b>.</p>
+<p>Then scroll down and click <b>Save Configuration</b>.</p>
 <p><img alt="namespace" src="../assets/save_conf.png" /></p>
 <h2 id="disabling-over-commitment-of-resources">Disabling Over Commitment of Resources</h2>
-<p>When you disable the Over Commitment of resources, you can reserve a system resource reservation percentage. To do this, you need to open Portainer Business Edition, go to <b>Cluster</b> and then to <b>Setup</b>. After that, you need to disable the toggle <b>Allow resource over-commit</b>, you cam then do a reservation of resources. Insert the percentage of the resources you want to reserve...</p>
+<p>When you disable the over commitment of resources, you can set a system resource reservation percentage. To do this, go to <b>Cluster</b> and then to <b>Setup</b>, then disable the toggle <b>Allow resource over-commit</b>. Once this is done you will be able to define a reservation of resources:</p>
 <p><img alt="namespace" src="../assets/reserve.png" /></p>
-<p>After you disabled the toggle, scroll down and click <b>Save Configuration</b>.</p>
+<p>Once you've made the necessary changes, scroll down and click <b>Save Configuration</b>.</p>
 <p><img alt="namespace" src="../assets/save_conf.png" /></p>
 <h2 id="notes"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 10h5.5L14 4.5V10M5 3h10l6 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2m0 9v2h14v-2H5m0 4v2h9v-2H5z"/></svg></span> Notes</h2>
 <p><a href="https://github.com/portainer/portainer-docs/blob/master/contributing.md" target="_blank">Contribute to these docs</a></p>
@@ -5160,7 +5163,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../lb/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enable use of external load balancer" rel="prev">
+        <a href="../namespaces/" class="md-footer__link md-footer__link--prev" aria-label="Previous: K8s: Limit usage of default namespace" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -5169,20 +5172,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Enable use of external load balancer
+              K8s: Limit usage of default namespace
             </div>
           </div>
         </a>
       
       
         
-        <a href="../namespaces/" class="md-footer__link md-footer__link--next" aria-label="Next: Limit usage of default namespace" rel="next">
+        <a href="../host_management/" class="md-footer__link md-footer__link--next" aria-label="Next: Enable Host Management Features" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Limit usage of default namespace
+              Enable Host Management Features
             </div>
           </div>
           <div class="md-footer__button md-icon">

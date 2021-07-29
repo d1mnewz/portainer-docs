@@ -16,7 +16,7 @@
     
     
       
-        <title>Limit usage of default namespace - Documentation</title>
+        <title>K8s: Limit usage of default namespace - Documentation</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Limit usage of default namespace
+              K8s: Limit usage of default namespace
             
           </span>
         </div>
@@ -1692,52 +1692,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../lb/" class="md-nav__link">
-        Enable use of external load balancer
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overcommit/" class="md-nav__link">
-        Allow/Disallow over-commitment of resources
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Limit usage of default namespace
-      </a>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
-        Security Options
+      <a href="../apps/" class="md-nav__link">
+        App Templates
       </a>
     </li>
   
@@ -1760,8 +1716,40 @@
   
   
     <li class="md-nav__item">
-      <a href="../apps/" class="md-nav__link">
-        App Templates
+      <a href="../lb/" class="md-nav__link">
+        K8s: Enable use of external load balancer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        K8s: Limit usage of default namespace
+      </a>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overcommit/" class="md-nav__link">
+        K8s: Allow/Disallow over-commitment of resources
       </a>
     </li>
   
@@ -1774,6 +1762,18 @@
     <li class="md-nav__item">
       <a href="../host_management/" class="md-nav__link">
         Enable Host Management Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security Settings
       </a>
     </li>
   
@@ -2106,7 +2106,7 @@
   
     <li class="md-nav__item">
       <a href="../../../v2.0/stacks/inspect/" class="md-nav__link">
-        Inspect a Stack
+        Edit/Inspect a Stack
       </a>
     </li>
   
@@ -3320,6 +3320,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../stacks/inspect/" class="md-nav__link">
+        Edit/Inspect a Stack
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../stacks/template/" class="md-nav__link">
         Create a template from a Stack
       </a>
@@ -3334,18 +3346,6 @@
     <li class="md-nav__item">
       <a href="../../stacks/duplicate_migration/" class="md-nav__link">
         Duplicate / Migrate Stacks
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../stacks/inspect/" class="md-nav__link">
-        Inspect a Stack
       </a>
     </li>
   
@@ -5127,13 +5127,13 @@
                 
                 
                 <h1 id="limit-usage-of-default-kubernetes-namespace-kubernetes-only">Limit usage of "default" Kubernetes Namespace (Kubernetes Only)</h1>
-<p>By default, a Kubernetes cluster will instantiate a default namespace when provisioning the cluster to hold the default set of Pods, Services, and Deployments used by the cluster but for an any reason, you want to limitate the usage of that namespace, with Portainer Business Edition, you can do it. </p>
+<p>By default, a Kubernetes cluster will instantiate a default namespace when provisioning the cluster to hold the default set of Pods, Services, and Deployments used by the cluster. If you would like to limit the usage of that namespace, you can do so with Portainer. </p>
 <h2 id="limiting-the-usage-of-default-namespace">Limiting the usage of "default" namespace</h2>
-<p>To do this, you need to open Portainer Business Edition, go to <b>Cluster</b> and the to <b>Setup</b>. After that, you need to enable the toggle <b>Restrict access to the default namespace</b>.</p>
+<p>To do this, go to <b>Cluster</b> and then to <b>Setup</b>, then enable the toggle <b>Restrict access to the default namespace</b>.</p>
 <p><img alt="namespace" src="../assets/namespaces.png" /></p>
-<p>After you enabled the toggle, scroll down and click <b>Save Configuration</b>.</p>
+<p>Then scroll down and click <b>Save Configuration</b>.</p>
 <p><img alt="namespace" src="../assets/save_conf.png" /></p>
-<p>Starting now, the only user with the power to run applications in the default namespace is the Administrator of Portainer. </p>
+<p>With this enabled, the only users with the power to run applications in the default namespace are Portainer Administrator users. </p>
 <h2 id="notes"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 10h5.5L14 4.5V10M5 3h10l6 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2m0 9v2h14v-2H5m0 4v2h9v-2H5z"/></svg></span> Notes</h2>
 <p><a href="https://github.com/portainer/portainer-docs/blob/master/contributing.md" target="_blank">Contribute to these docs</a></p>
                 
@@ -5155,7 +5155,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../overcommit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Allow/Disallow over-commitment of resources" rel="prev">
+        <a href="../lb/" class="md-footer__link md-footer__link--prev" aria-label="Previous: K8s: Enable use of external load balancer" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -5164,20 +5164,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Allow/Disallow over-commitment of resources
+              K8s: Enable use of external load balancer
             </div>
           </div>
         </a>
       
       
         
-        <a href="../security/" class="md-footer__link md-footer__link--next" aria-label="Next: Security Options" rel="next">
+        <a href="../overcommit/" class="md-footer__link md-footer__link--next" aria-label="Next: K8s: Allow/Disallow over-commitment of resources" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Security Options
+              K8s: Allow/Disallow over-commitment of resources
             </div>
           </div>
           <div class="md-footer__button md-icon">

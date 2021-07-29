@@ -16,7 +16,7 @@
     
     
       
-        <title>Inspect a Stack - Documentation</title>
+        <title>Edit/Inspect a Stack - Documentation</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Inspect a Stack
+              Edit/Inspect a Stack
             
           </span>
         </div>
@@ -1686,44 +1686,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/lb/" class="md-nav__link">
-        Enable use of external load balancer
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../settings/overcommit/" class="md-nav__link">
-        Allow/Disallow over-commitment of resources
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../settings/namespaces/" class="md-nav__link">
-        Limit usage of default namespace
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../settings/security/" class="md-nav__link">
-        Security Options
+      <a href="../../settings/apps/" class="md-nav__link">
+        App Templates
       </a>
     </li>
   
@@ -1746,8 +1710,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/apps/" class="md-nav__link">
-        App Templates
+      <a href="../../settings/lb/" class="md-nav__link">
+        K8s: Enable use of external load balancer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/namespaces/" class="md-nav__link">
+        K8s: Limit usage of default namespace
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/overcommit/" class="md-nav__link">
+        K8s: Allow/Disallow over-commitment of resources
       </a>
     </li>
   
@@ -1760,6 +1748,18 @@
     <li class="md-nav__item">
       <a href="../../settings/host_management/" class="md-nav__link">
         Enable Host Management Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/security/" class="md-nav__link">
+        Security Settings
       </a>
     </li>
   
@@ -2094,7 +2094,7 @@
   
     <li class="md-nav__item">
       <a href="../../../v2.0/stacks/inspect/" class="md-nav__link">
-        Inspect a Stack
+        Edit/Inspect a Stack
       </a>
     </li>
   
@@ -3312,6 +3312,26 @@
             
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Edit/Inspect a Stack
+      </a>
+      
+    </li>
+  
+
+          
+            
+  
+  
   
     <li class="md-nav__item">
       <a href="../template/" class="md-nav__link">
@@ -3329,26 +3349,6 @@
       <a href="../duplicate_migration/" class="md-nav__link">
         Duplicate / Migrate Stacks
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Inspect a Stack
-      </a>
-      
     </li>
   
 
@@ -5128,19 +5128,27 @@
                   </a>
                 
                 
-                <h1 id="inspect-a-stack">Inspect a Stack</h1>
-<p>In Portainer, you can inspect your stacks to see what is running or access to their logs and stats. </p>
+                <h1 id="editinspect-a-stack">Edit/Inspect a Stack</h1>
+<p>In Portainer, you can inspect your stacks to see what is running or access to their logs and stats, as well as make changes to a stack you have already deployed. </p>
 <h2 id="inspecting-a-stack">Inspecting a Stack</h2>
-<p>To inspect the task associated to your stack, select <b>Stacks</b> and then select the stack you want to inspect.</p>
+<p>To inspect the tasks associated to your stack, select <b>Stacks</b> and then select the stack you want to inspect.</p>
 <p><img alt="inspect" src="../assets/inspect-1.png" /></p>
-<p>Here you can:
-* View what services that make up this stack 
-* If they are running or stopped
-* How many replicas running in each host
-* Access to logs
-* Inspect the task stats
-* Access to the container console</p>
+<p>Here you can:</p>
+<ul>
+<li>Stop, delete or create a template from this stack</li>
+<li>Edit the stack YML directly</li>
+<li>If the stack was deployed from a Git repository, you can redeploy the stack using an updated compose file from the Git repository</li>
+<li><a href="/v2.0-be/stacks/duplicate_migration/">Duplicate or migrate the stack</a></li>
+</ul>
 <p><img alt="inspect" src="../assets/inspect-2.png" /></p>
+<ul>
+<li>View what services that make up the stack, and whether they are running or stopped</li>
+<li>How many replicas running in each host</li>
+<li>Access the service logs</li>
+<li>Inspect the task stats</li>
+<li>Access the container console</li>
+</ul>
+<p><img alt="inspect" src="../assets/inspect-3.png" /></p>
 <h2 id="notes"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 10h5.5L14 4.5V10M5 3h10l6 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2m0 9v2h14v-2H5m0 4v2h9v-2H5z"/></svg></span> Notes</h2>
 <p><a href="https://github.com/portainer/portainer-docs/blob/master/contributing.md" target="_blank">Contribute to these docs</a></p>
                 
@@ -5162,7 +5170,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../duplicate_migration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Duplicate / Migrate Stacks" rel="prev">
+        <a href="../create/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Add/Create a Stack" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -5171,20 +5179,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Duplicate / Migrate Stacks
+              Add/Create a Stack
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../webhooks/create/" class="md-footer__link md-footer__link--next" aria-label="Next: Configure a Webhook" rel="next">
+        <a href="../template/" class="md-footer__link md-footer__link--next" aria-label="Next: Create a template from a Stack" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Configure a Webhook
+              Create a template from a Stack
             </div>
           </div>
           <div class="md-footer__button md-icon">

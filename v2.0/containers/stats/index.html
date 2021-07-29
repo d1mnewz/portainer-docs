@@ -1686,44 +1686,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v2.0-be/settings/lb/" class="md-nav__link">
-        Enable use of external load balancer
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../v2.0-be/settings/overcommit/" class="md-nav__link">
-        Allow/Disallow over-commitment of resources
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../v2.0-be/settings/namespaces/" class="md-nav__link">
-        Limit usage of default namespace
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../v2.0-be/settings/security/" class="md-nav__link">
-        Security Options
+      <a href="../../../v2.0-be/settings/apps/" class="md-nav__link">
+        App Templates
       </a>
     </li>
   
@@ -1746,8 +1710,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v2.0-be/settings/apps/" class="md-nav__link">
-        App Templates
+      <a href="../../../v2.0-be/settings/lb/" class="md-nav__link">
+        K8s: Enable use of external load balancer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2.0-be/settings/namespaces/" class="md-nav__link">
+        K8s: Limit usage of default namespace
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2.0-be/settings/overcommit/" class="md-nav__link">
+        K8s: Allow/Disallow over-commitment of resources
       </a>
     </li>
   
@@ -1760,6 +1748,18 @@
     <li class="md-nav__item">
       <a href="../../../v2.0-be/settings/host_management/" class="md-nav__link">
         Enable Host Management Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2.0-be/settings/security/" class="md-nav__link">
+        Security Settings
       </a>
     </li>
   
@@ -2098,7 +2098,7 @@
   
     <li class="md-nav__item">
       <a href="../../stacks/inspect/" class="md-nav__link">
-        Inspect a Stack
+        Edit/Inspect a Stack
       </a>
     </li>
   
@@ -3322,6 +3322,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../v2.0-be/stacks/inspect/" class="md-nav__link">
+        Edit/Inspect a Stack
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../v2.0-be/stacks/template/" class="md-nav__link">
         Create a template from a Stack
       </a>
@@ -3336,18 +3348,6 @@
     <li class="md-nav__item">
       <a href="../../../v2.0-be/stacks/duplicate_migration/" class="md-nav__link">
         Duplicate / Migrate Stacks
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../v2.0-be/stacks/inspect/" class="md-nav__link">
-        Inspect a Stack
       </a>
     </li>
   
@@ -5129,9 +5129,9 @@
                 
                 
                 <h1 id="view-container-stats">View Container Stats</h1>
-<p>Stats are very important to understand the resource consumption of yours containers. In Portainer, you are able to monitor this from the UI. </p>
+<p>Stats are very important to understand the resource consumption of your containers. In Portainer, you are able to monitor this from the UI. </p>
 <h2 id="viewing-container-stats">Viewing Container Stats</h2>
-<p>First Click <b>Containers</b>, select the container you want to see the stats.</p>
+<p>First click <b>Containers</b>, then select the container.</p>
 <p><img alt="stats" src="../assets/inspect-1.png" /></p>
 <p>Then click <b>Stats</b></p>
 <p><img alt="stats" src="../assets/stats-1.png" /></p>
@@ -5140,9 +5140,10 @@
 <li>Memory Usage</li>
 <li>CPU Usage</li>
 <li>Network Usage: RX and TX</li>
-<li>Process running in the container</li>
-<li>Refresh Rate: You can configure time intervals to get new stats data.</li>
+<li>I/O Usage</li>
+<li>Processes running in the container</li>
 </ul>
+<p>You can also configure the refresh rate of the displayed stats from the dropdown box.</p>
 <p><img alt="stats" src="../assets/stats-2.png" /></p>
 <h2 id="notes"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 10h5.5L14 4.5V10M5 3h10l6 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2m0 9v2h14v-2H5m0 4v2h9v-2H5z"/></svg></span> Notes</h2>
 <p><a href="https://github.com/portainer/portainer-docs/blob/master/contributing.md" target="_blank">Contribute to these docs</a></p>
