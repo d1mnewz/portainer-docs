@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://documentation.portainer.io/v2.0-be/troubleshooting/deprecated/">
+        <link rel="canonical" href="https://documentation.portainer.io/v2.0-be/users/k8s-roles/">
       
       <link rel="icon" href="../../../assets/icon.webp">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Deprecated and Removed Features - Documentation</title>
+        <title>K8s: Roles and Bindings - Documentation</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deprecated and Removed Features
+              K8s: Roles and Bindings
             
           </span>
         </div>
@@ -1481,12 +1481,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_4" type="checkbox" id="__nav_5_2_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_4" type="checkbox" id="__nav_5_2_4" checked>
       
       <label class="md-nav__link" for="__nav_5_2_4">
         Managing Users & Teams
@@ -1504,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/roles/" class="md-nav__link">
+      <a href="../roles/" class="md-nav__link">
         RBAC Overview
       </a>
     </li>
@@ -1516,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/viewer/" class="md-nav__link">
+      <a href="../viewer/" class="md-nav__link">
         Effective access viewer
       </a>
     </li>
@@ -1528,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/create/" class="md-nav__link">
+      <a href="../create/" class="md-nav__link">
         Create a User
       </a>
     </li>
@@ -1540,7 +1542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/create-team/" class="md-nav__link">
+      <a href="../create-team/" class="md-nav__link">
         Create a Team
       </a>
     </li>
@@ -1552,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/promoting/" class="md-nav__link">
+      <a href="../promoting/" class="md-nav__link">
         Promote a User as Admin
       </a>
     </li>
@@ -1564,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/user-team/" class="md-nav__link">
+      <a href="../user-team/" class="md-nav__link">
         Add a User to a Team
       </a>
     </li>
@@ -1576,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/reset-user/" class="md-nav__link">
+      <a href="../reset-user/" class="md-nav__link">
         Reset User Password
       </a>
     </li>
@@ -1588,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/reset-admin/" class="md-nav__link">
+      <a href="../reset-admin/" class="md-nav__link">
         Reset Administrator Password
       </a>
     </li>
@@ -1598,11 +1600,19 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../users/k8s-roles/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         K8s: Roles and Bindings
       </a>
+      
     </li>
   
 
@@ -1958,19 +1968,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/deprecated/" class="md-nav__link">
         Deprecated and Removed Features
       </a>
-      
     </li>
   
 
@@ -5131,63 +5133,404 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/portainer/portainer-docs/edit/master/docs/v2.0-be/troubleshooting/deprecated.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/portainer/portainer-docs/edit/master/docs/v2.0-be/users/k8s-roles.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="deprecated-and-removed-features">Deprecated and removed features</h1>
-<h2 id="deprecated-features">Deprecated features</h2>
-<p>This section lists features and capabilities that have been marked as deprecated, and should no longer be used. Features and capabilities marked as deprecated will no longer receive enhancements or support.</p>
-<p>The table below provides an overview of deprecated features and capabilities. The <b>Deprecated</b> column contains the release in which the feature was marked deprecated, whereas the <b>Remove</b> column contains a tentative release in which the feature is to be removed. If no release is included in the <b>Remove column</b>, the release is yet to be decided on.</p>
+                <h1 id="kubernetes-roles-and-bindings">Kubernetes: Roles and Bindings</h1>
+<h2 id="portainer-and-kubernetes">Portainer and Kubernetes</h2>
+<p>When managing a Kubernetes environment with Portainer, the Role-Based Access Control (RBAC) configuration is based on two components:</p>
+<ul>
+<li>Kubernetes' cluster roles and namespace roles (which restrict access to Kubernetes itself)</li>
+<li>Portainer's authorization flags (which <a href="#portainer-access-restrictions">restrict access</a> to Portainer's functionality)</li>
+</ul>
+<p>The following tables provide a reference for how our Portainer roles map to capabilities within Kubernetes.</p>
+<h2 id="role-allocations">Role Allocations</h2>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>Deprecated</th>
-<th>Remove</th>
+<th>Portainer Role</th>
+<th>Cluster Role Binding</th>
+<th>Namespace Role Binding</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Disabling analytics via: <code>--no-analytics</code></td>
-<td>v2.0</td>
-<td>TBD</td>
+<td>Endpoint Admin</td>
+<td>cluster-admin (k8s system)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td><a href="#portainer-operator">portainer-operator</a>, <a href="#portainer-helpdesk">portainer-helpdesk</a></td>
+<td><a href="#portainer-view">portainer-view</a> (all non-system namespaces)</td>
+</tr>
+<tr>
+<td>User</td>
+<td><a href="#portainer-basic">portainer-basic</a></td>
+<td><a href="#portainer-edit">portainer-edit</a>, <a href="#portainer-view">portainer-view</a> (only assigned namespaces)</td>
+</tr>
+<tr>
+<td>Help desk</td>
+<td><a href="#portainer-helpdesk">portainer-helpdesk</a></td>
+<td><a href="#portainer-view">portainer-view</a> (all non-system namespaces)</td>
+</tr>
+<tr>
+<td>Read-Only</td>
+<td><a href="#portainer-basic">portainer-basic</a></td>
+<td><a href="#portainer-view">portainer-view</a> (only assigned namespaces)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="removed-features">Removed features</h2>
-<p>This section outlines features &amp; capabilities that have been removed from Portainer.</p>
+<h2 id="cluster-roles">Cluster Roles</h2>
+<p><a name="portainer-basic"></a></p>
+<h3 id="portainer-basic">portainer-basic</h3>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>Removed</th>
+<th>API Group</th>
+<th>Resources</th>
+<th>Verbs</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Specifying external endpoints via JSON via <code>--external-endpoints</code></td>
-<td>v2.0</td>
+<td>(Empty)</td>
+<td>namespaces, nodes</td>
+<td>list</td>
 </tr>
 <tr>
-<td>Setting time between endpoint synchronization requests via <code>--sync-interval</code></td>
-<td>v2.0</td>
+<td>storage.k8s.io</td>
+<td>storageclasses</td>
+<td>list</td>
 </tr>
 <tr>
-<td>Disabling Portainer internal authentication via <code>--no-auth</code></td>
-<td>v2.0</td>
-</tr>
-<tr>
-<td>Specifying a templates file to load on first run via <code>--templates-file</code></td>
-<td>v2.0</td>
-</tr>
-<tr>
-<td>Preventing Portainer from running a snapshot of endpoints via <code>--no-snapshot</code></td>
-<td>v2.0</td>
+<td>networking.k8s.io</td>
+<td>ingresses</td>
+<td>list</td>
 </tr>
 </tbody>
 </table>
+<p><a name="portainer-helpdesk"></a></p>
+<h3 id="portainer-helpdesk">portainer-helpdesk</h3>
+<table>
+<thead>
+<tr>
+<th>API Group</th>
+<th>Resources</th>
+<th>Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Empty)</td>
+<td>componentstatuses, endpoints, events, namespaces, nodes</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>storage.k8s.io</td>
+<td>storageclasses</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>networking.k8s.io</td>
+<td>ingresses</td>
+<td>get, list, watch</td>
+</tr>
+</tbody>
+</table>
+<p><a name="portainer-operator"></a></p>
+<h3 id="portainer-operator">portainer-operator</h3>
+<table>
+<thead>
+<tr>
+<th>API Group</th>
+<th>Resources</th>
+<th>Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Empty)</td>
+<td>configmaps, secrets</td>
+<td>update</td>
+</tr>
+<tr>
+<td>(Empty)</td>
+<td>pods</td>
+<td>delete</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>deployments</td>
+<td>patch</td>
+</tr>
+</tbody>
+</table>
+<h2 id="namespace-roles">Namespace Roles</h2>
+<p><a name="portainer-edit"></a></p>
+<h3 id="portainer-edit">portainer-edit</h3>
+<table>
+<thead>
+<tr>
+<th>API Group</th>
+<th>Resources</th>
+<th>Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Empty)</td>
+<td>configmaps, endpoints, persistentvolumeclaims, pods, pods/attach, pods/exec, pods/portforward, pods/proxy, replicationcontrollers, replicationcontrollers/scale, secrets, serviceaccounts, services, services/proxy</td>
+<td>create, delete, deletecollection, patch, update</td>
+</tr>
+<tr>
+<td>(Empty)</td>
+<td>pods/attach, pods/exec, pods/portforward, pods/proxy, secrets, services/proxy</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>daemonsets, deployments, deployments/rollback, deployments/scale, replicasets, replicasets/scale, statefulsets, statefulsets/scale</td>
+<td>create, delete, deletecollection, patch, update</td>
+</tr>
+<tr>
+<td>autoscaling</td>
+<td>horizontalpodautoscalers</td>
+<td>create, delete, deletecollection, patch, update</td>
+</tr>
+<tr>
+<td>batch</td>
+<td>cronjobs, jobs</td>
+<td>create, delete, deletecollection, patch, update</td>
+</tr>
+<tr>
+<td>extensions</td>
+<td>daemonsets, deployments, deployments/rollback, deployments/scale, ingresses, networkpolicies, replicasets, replicasets/scale, replicationcontrollers/scale</td>
+<td>create, delete, deletecollection, patch, update</td>
+</tr>
+<tr>
+<td>networking.k8s.io</td>
+<td>ingresses, networkpolicies</td>
+<td>create, delete, deletecollection, patch, update</td>
+</tr>
+<tr>
+<td>policy</td>
+<td>poddisruptionbudgets</td>
+<td>create, delete, deletecollection, patch, update</td>
+</tr>
+</tbody>
+</table>
+<p><a name="portainer-view"></a></p>
+<h3 id="portainer-view">portainer-view</h3>
+<table>
+<thead>
+<tr>
+<th>API Group</th>
+<th>Resources</th>
+<th>Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Empty)</td>
+<td>bindings, componentstatuses, configmaps, endpoints, events, limitranges, namespaces, namespaces/status, persistentvolumeclaims, persistentvolumeclaims/status, pods, pods/log, pods/status, replicationcontrollers, replicationcontrollers/scale, replicationcontrollers/status, resourcequotas, resourcequotas/status, secrets, serviceaccounts, services, services/status</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>controllerrevisions, daemonsets, daemonsets/status, deployments, deployments/scale, deployments/status, replicasets, replicasets/scale, replicasets/status, statefulsets, statefulsets/scale, statefulsets/status</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>autoscaling</td>
+<td>horizontalpodautoscalers, horizontalpodautoscalers/status</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>batch</td>
+<td>cronjobs, cronjobs/status, jobs, jobs/status</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>extensions</td>
+<td>daemonsets, daemonsets/status, deployments, deployments/scale, deployments/status, ingresses, ingresses/status, networkpolicies, replicasets, replicasets/scale, replicasets/status, replicationcontrollers/scale</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>networking.k8s.io</td>
+<td>ingresses, ingresses/status, networkpolicies</td>
+<td>get, list, watch</td>
+</tr>
+<tr>
+<td>policy</td>
+<td>poddisruptionbudgets, poddisruptionbudgets/status</td>
+<td>get, list, watch</td>
+</tr>
+</tbody>
+</table>
+<p><a name="portainer-access-restrictions"></a></p>
+<h2 id="portainer-access-restrictions">Portainer Access Restrictions</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Endpoint admin</th>
+<th>Operator</th>
+<th>Helpdesk</th>
+<th>Standard User</th>
+<th>Read-only User</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Namespace Scope</td>
+<td>All</td>
+<td>All, EXCEPT System</td>
+<td>All, EXCEPT System</td>
+<td>Default + Assigned</td>
+<td>Default + Assigned</td>
+</tr>
+<tr>
+<td>Resource Pools</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Resource Pool Details</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Resource Pool Access Management</td>
+<td>RW</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Applications</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td>RW</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Application Details</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td>RW</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Pod Delete</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Application Console</td>
+<td>RW</td>
+<td>RW</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Advanced Deployment</td>
+<td>RW</td>
+<td></td>
+<td></td>
+<td>RW</td>
+<td></td>
+</tr>
+<tr>
+<td>Configurations</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td>RW</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Configuration Details</td>
+<td>RW</td>
+<td>RW</td>
+<td>R</td>
+<td>RW</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Volumes</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td>RW</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Volume Details</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td>RW</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Cluster</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cluster Node View</td>
+<td>RW</td>
+<td>R</td>
+<td>R</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cluster Setup</td>
+<td>RW</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Application Error Details</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Storage Class Disabled</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <h2 id="notes"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 10h5.5L14 4.5V10M5 3h10l6 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2m0 9v2h14v-2H5m0 4v2h9v-2H5z"/></svg></span> Notes</h2>
 <p><a href="https://github.com/portainer/portainer-docs/blob/master/contributing.md" target="_blank">Contribute to these docs</a></p>
                 
@@ -5209,7 +5552,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../ad/nginx/rp-nginx/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Nginx" rel="prev">
+        <a href="../reset-admin/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reset Administrator Password" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -5218,20 +5561,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Nginx
+              Reset Administrator Password
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../v2.0/stacks/create/" class="md-footer__link md-footer__link--next" aria-label="Next: Add/Create a Stack" rel="next">
+        <a href="../../registries/description/" class="md-footer__link md-footer__link--next" aria-label="Next: Registry Management Overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Add/Create a Stack
+              Registry Management Overview
             </div>
           </div>
           <div class="md-footer__button md-icon">

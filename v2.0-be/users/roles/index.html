@@ -1605,6 +1605,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k8s-roles/" class="md-nav__link">
+        K8s: Roles and Bindings
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -5146,24 +5158,25 @@ frameborder="0" allowfullscreen class="video"></iframe>
 <p>There are several types of roles:</p>
 <ul>
 <li>
-<p>Endpoint Administrator: has complete control over the resources deployed within a given endpoint, but is not able to make any changes to the infrastructure that underpins an endpoint (i.e. no host management), nor are they able to make any changes to Portainer internal settings.</p>
+<p><b>Endpoint Administrator</b> has complete control over the resources deployed within a given endpoint, but is not able to make any changes to the infrastructure that underpins an endpoint (i.e. no host management), nor are they able to make any changes to Portainer internal settings.</p>
 </li>
 <li>
-<p>Operator: has operational control over the resources deployed within a given endpoint. Operator is able to Update/Re-deploy/Start/Stop Containers/Services, check logs and console into containers but is not able to create any resources.</p>
+<p><b>Operator</b> has operational control over the resources deployed within a given endpoint. Operator is able to Update/Re-deploy/Start/Stop Containers/Services, check logs and console into containers but is not able to create any resources.</p>
 </li>
 <li>
-<p>Helpdesk: has read-only access over the resources deployed within a given endpoint but is not able to make any changes to any resource, nor open a console to a container, or make changes to a container’s volumes.</p>
+<p><b>Helpdesk</b> has read-only access over the resources deployed within a given endpoint but is not able to make any changes to any resource, nor open a console to a container, or make changes to a container’s volumes.</p>
 </li>
 <li>
-<p>Standard User: has complete control over the resources that a user deploys, or if the user is a member of a team, complete control over the resources that users of that team deploy.</p>
+<p><b>Standard User</b> has complete control over the resources that a user deploys, or if the user is a member of a team, complete control over the resources that users of that team deploy.</p>
 </li>
 <li>
-<p>Read-Only User: has read-only access over the resources they are entitled to see (resources created by members of their team, and public resources).</p>
-</li>
-<li>
-<p>The Administrator role sits outside of these four roles, and effectively acts as a “Global Admin”. A user assigned this role has complete control over Portainer settings, and all resources on every endpoint under Portainer control.</p>
+<p><b>Read-Only User</b> has read-only access over the resources they are entitled to see (resources created by members of their team, and public resources).</p>
 </li>
 </ul>
+<p>The <b>Administrator</b> role sits outside of these four roles, and effectively acts as a “Global Admin”. A user assigned this role has complete control over Portainer settings, and all resources on every endpoint under Portainer control.</p>
+<h2 id="docker-vs-kubernetes">Docker vs Kubernetes</h2>
+<p>As Docker does not natively provide role-based access control, Portainer implements our own role management to provide this functionality. On a Kubernetes environment, we leverage the RBAC functionality built into Kubernetes alongside our own role management to provide security and flexibility to roles and access.</p>
+<p>For more advanced details on how we map Portainer roles to Kubernetes roles, refer to our <a href="/v2.0-be/users/k8s-roles/">Roles and Bindings</a> documentation.</p>
 <p><br></p>
 <h2 id="notes"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 10h5.5L14 4.5V10M5 3h10l6 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2m0 9v2h14v-2H5m0 4v2h9v-2H5z"/></svg></span> Notes</h2>
 <p><a href="https://github.com/portainer/portainer-docs/blob/master/contributing.md" target="_blank">Contribute to these docs</a></p>
