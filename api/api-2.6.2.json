@@ -5,17 +5,20 @@
     ],
     "swagger": "2.0",
     "info": {
-        "description": "Portainer API is an HTTP API served by Portainer. It is used by the Portainer UI and everything you can do with the UI can be done using the HTTP API.\nExamples are available at https://documentation.portainer.io/api/api-examples/\nYou can find out more about Portainer at [http://portainer.io](http://portainer.io) and get some support on [Slack](http://portainer.io/slack/).\n\n# Authentication\n\nMost of the API endpoints require to be authenticated as well as some level of authorization to be used.\nPortainer API uses JSON Web Token to manage authentication and thus requires you to provide a token in the **Authorization** header of each request\nwith the **Bearer** authentication mechanism.\n\nExample:\n\n```\nBearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOjEsImV4cCI6MTQ5OTM3NjE1NH0.NJ6vE8FY1WG6jsRQzfMqeatJ4vh2TWAeeYfDhP71YEE\n```\n\n# Security\n\nEach API endpoint has an associated access policy, it is documented in the description of each endpoint.\n\nDifferent access policies are available:\n\n- Public access\n- Authenticated access\n- Restricted access\n- Administrator access\n\n### Public access\n\nNo authentication is required to access the endpoints with this access policy.\n\n### Authenticated access\n\nAuthentication is required to access the endpoints with this access policy.\n\n### Restricted access\n\nAuthentication is required to access the endpoints with this access policy.\nExtra-checks might be added to ensure access to the resource is granted. Returned data might also be filtered.\n\n### Administrator access\n\nAuthentication as well as an administrator role are required to access the endpoints with this access policy.\n\n# Execute Docker requests\n\nPortainer **DOES NOT** expose specific endpoints to manage your Docker resources (create a container, remove a volume, etc...).\n\nInstead, it acts as a reverse-proxy to the Docker HTTP API. This means that you can execute Docker requests **via** the Portainer HTTP API.\n\nTo do so, you can use the `/endpoints/{id}/docker` Portainer API endpoint (which is not documented below due to Swagger limitations). This endpoint has a restricted access policy so you still need to be authenticated to be able to query this endpoint. Any query on this endpoint will be proxied to the Docker API of the associated endpoint (requests and responses objects are the same as documented in the Docker API).\n\n**NOTE**: You can find more information on how to query the Docker API in the [Docker official documentation](https://docs.docker.com/engine/api/v1.30/) as well as in [this Portainer example](https://documentation.portainer.io/api/api-examples/).\n",
+        "description": "Portainer API is an HTTP API served by Portainer. It is used by the Portainer UI and everything you can do with the UI can be done using the HTTP API.\nExamples are available at https://gist.github.com/deviantony/77026d402366b4b43fa5918d41bc42f8\nYou can find out more about Portainer at [http://portainer.io](http://portainer.io) and get some support on [Slack](http://portainer.io/slack/).\n\n# Authentication\n\nMost of the API endpoints require to be authenticated as well as some level of authorization to be used.\nPortainer API uses JSON Web Token to manage authentication and thus requires you to provide a token in the **Authorization** header of each request\nwith the **Bearer** authentication mechanism.\n\nExample:\n\n```\nBearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOjEsImV4cCI6MTQ5OTM3NjE1NH0.NJ6vE8FY1WG6jsRQzfMqeatJ4vh2TWAeeYfDhP71YEE\n```\n\n# Security\n\nEach API endpoint has an associated access policy, it is documented in the description of each endpoint.\n\nDifferent access policies are available:\n\n- Public access\n- Authenticated access\n- Restricted access\n- Administrator access\n\n### Public access\n\nNo authentication is required to access the endpoints with this access policy.\n\n### Authenticated access\n\nAuthentication is required to access the endpoints with this access policy.\n\n### Restricted access\n\nAuthentication is required to access the endpoints with this access policy.\nExtra-checks might be added to ensure access to the resource is granted. Returned data might also be filtered.\n\n### Administrator access\n\nAuthentication as well as an administrator role are required to access the endpoints with this access policy.\n\n# Execute Docker requests\n\nPortainer **DO NOT** expose specific endpoints to manage your Docker resources (create a container, remove a volume, etc...).\n\nInstead, it acts as a reverse-proxy to the Docker HTTP API. This means that you can execute Docker requests **via** the Portainer HTTP API.\n\nTo do so, you can use the `/endpoints/{id}/docker` Portainer API endpoint (which is not documented below due to Swagger limitations). This endpoint has a restricted access policy so you still need to be authenticated to be able to query this endpoint. Any query on this endpoint will be proxied to the Docker API of the associated endpoint (requests and responses objects are the same as documented in the Docker API).\n\n**NOTE**: You can find more information on how to query the Docker API in the [Docker official documentation](https://docs.docker.com/engine/api/v1.30/) as well as in [this Portainer example](https://gist.github.com/deviantony/77026d402366b4b43fa5918d41bc42f8).\n",
         "title": "PortainerCE API",
         "contact": {
             "email": "info@portainer.io"
         },
-        "license": {},
-        "version": "2.6.0"
+        "license": {
+            "name": "zlib",
+            "url": "https://github.com/portainer/portainer/blob/develop/LICENSE"
+        },
+        "version": "2.6.2"
     },
     "basePath": "/api",
     "paths": {
-        "/api/endpoints/:id/settings": {
+        "/api/endpoints/{id}/settings": {
             "put": {
                 "security": [
                     {
@@ -259,7 +262,7 @@
                 "description": "Create a custom template.\n**Access policy**: authenticated",
                 "consumes": [
                     "application/json",
-                    " multipart/form-data"
+                    "multipart/form-data"
                 ],
                 "produces": [
                     "application/json"
@@ -660,10 +663,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -706,10 +706,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -752,10 +749,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -805,10 +799,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -846,10 +837,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -889,10 +877,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -927,7 +912,7 @@
                     },
                     {
                         "description": "EdgeGroup data when method is string",
-                        "name": "body",
+                        "name": "body_string",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -936,7 +921,7 @@
                     },
                     {
                         "description": "EdgeGroup data when method is file",
-                        "name": "body",
+                        "name": "body_file",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -955,10 +940,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -1004,10 +986,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -1060,10 +1039,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -1104,10 +1080,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -1153,10 +1126,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -1205,10 +1175,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -1261,10 +1228,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -1312,10 +1276,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -1363,10 +1324,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -1406,10 +1364,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -1482,10 +1437,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -1531,10 +1483,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -1587,10 +1536,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             },
@@ -1631,10 +1577,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -1680,10 +1623,7 @@
                         "description": ""
                     },
                     "503": {
-                        "description": "Service Unavailable",
-                        "schema": {
-                            "type": "Edge"
-                        }
+                        "description": "Edge compute features are disabled"
                     }
                 }
             }
@@ -1842,7 +1782,7 @@
                 }
             }
         },
-        "/endpoint_groups/:id": {
+        "/endpoint_groups/{id}": {
             "get": {
                 "security": [
                     {
@@ -1940,9 +1880,7 @@
                         "description": "Server error"
                     }
                 }
-            }
-        },
-        "/endpoint_groups/{id}": {
+            },
             "delete": {
                 "security": [
                     {
@@ -2157,10 +2095,7 @@
                         }
                     },
                     "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "type": "Server"
-                        }
+                        "description": "Server error"
                     }
                 }
             },
@@ -2525,7 +2460,7 @@
                     {
                         "type": "string",
                         "description": "EdgeStack Id",
-                        "name": "stackID",
+                        "name": "stackId",
                         "in": "path",
                         "required": true
                     }
@@ -3343,7 +3278,7 @@
                 "description": "Deploy a new stack into a Docker environment specified via the endpoint identifier.\n**Access policy**: restricted",
                 "consumes": [
                     "application/json",
-                    " multipart/form-data"
+                    "multipart/form-data"
                 ],
                 "produces": [
                     "application/json"
@@ -3610,7 +3545,7 @@
                         "description": "Permission denied"
                     },
                     "404": {
-                        "description": " not found"
+                        "description": "Not found"
                     },
                     "500": {
                         "description": "Server error"
@@ -3658,6 +3593,71 @@
                     },
                     "404": {
                         "description": "Stack not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/stacks/{id}/git": {
+            "put": {
+                "security": [
+                    {
+                        "jwt": []
+                    }
+                ],
+                "description": "Pull and redeploy a stack via Git\n**Access policy**: restricted",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "stacks"
+                ],
+                "summary": "Redeploy a stack",
+                "operationId": "StackUpdateGit",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Stack identifier",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Stacks created before version 1.18.0 might not have an associated endpoint identifier. Use this optional parameter to set the endpoint identifier used by the stack.",
+                        "name": "endpointId",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Git configs for pull and redeploy a stack",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/stacks.updateStackGitPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/portainer.Stack"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "403": {
+                        "description": "Permission denied"
+                    },
+                    "404": {
+                        "description": "Not found"
                     },
                     "500": {
                         "description": "Server error"
@@ -3763,7 +3763,7 @@
                         "description": "Permission denied"
                     },
                     "404": {
-                        "description": " not found"
+                        "description": "Not found"
                     },
                     "500": {
                         "description": "Server error"
@@ -3807,7 +3807,7 @@
                         "description": "Permission denied"
                     },
                     "404": {
-                        "description": " not found"
+                        "description": "Not found"
                     },
                     "500": {
                         "description": "Server error"
@@ -4375,6 +4375,15 @@
                 ],
                 "summary": "Remove a team",
                 "operationId": "TeamDelete",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Team Id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "204": {
                         "description": "Success"
@@ -4410,6 +4419,15 @@
                 ],
                 "summary": "List team memberships",
                 "operationId": "TeamMemberships",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Team Id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -6212,13 +6230,19 @@
             "type": "object",
             "properties": {
                 "configFilePath": {
-                    "type": "string"
+                    "description": "Path to where the config file is in this url/refName",
+                    "type": "string",
+                    "example": "docker-compose.yml"
                 },
                 "referenceName": {
-                    "type": "string"
+                    "description": "The reference name",
+                    "type": "string",
+                    "example": "refs/heads/branch_name"
                 },
                 "url": {
-                    "type": "string"
+                    "description": "The repo url",
+                    "type": "string",
+                    "example": "https://github.com/portainer/portainer-ee.git"
                 }
             }
         },
@@ -6586,9 +6610,9 @@
                     "description": "Deprecated in DBVersion == 18",
                     "type": "array",
                     "items": {
-                        "description": "User identifier who created this template",
+                        "description": "User Identifier",
                         "type": "integer",
-                        "example": 3
+                        "example": 1
                     }
                 },
                 "AzureCredentials": {
@@ -6744,9 +6768,9 @@
                     "description": "Deprecated in DBVersion == 18",
                     "type": "array",
                     "items": {
-                        "description": "User identifier who created this template",
+                        "description": "User Identifier",
                         "type": "integer",
-                        "example": 3
+                        "example": 1
                     }
                 },
                 "Description": {
@@ -7120,9 +7144,9 @@
                     "description": "Deprecated fields\nDeprecated in DBVersion == 18",
                     "type": "array",
                     "items": {
-                        "description": "User identifier who created this template",
+                        "description": "User Identifier",
                         "type": "integer",
-                        "example": 3
+                        "example": 1
                     }
                 },
                 "Gitlab": {
@@ -8430,6 +8454,23 @@
                 }
             }
         },
+        "stacks.updateStackGitPayload": {
+            "type": "object",
+            "properties": {
+                "repositoryAuthentication": {
+                    "type": "boolean"
+                },
+                "repositoryPassword": {
+                    "type": "string"
+                },
+                "repositoryReferenceName": {
+                    "type": "string"
+                },
+                "repositoryUsername": {
+                    "type": "string"
+                }
+            }
+        },
         "stacks.updateSwarmStackPayload": {
             "type": "object",
             "properties": {
@@ -8781,10 +8822,6 @@
         {
             "description": "Information about the Portainer instance",
             "name": "status"
-        },
-        {
-            "description": "Manage Docker stacks",
-            "name": "stacks"
         },
         {
             "description": "Manage users",
