@@ -5147,6 +5147,10 @@
 <li>Upload: If you already have a dockerfile, you can upload to Portainer to build that image.</li>
 <li>URL: If the dockerfile is hosted in Internet, you can download directly to Portainer and build the image.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a multi-node environment, the image you build will only be available on the node you choose under Deployment. If you wish to make the image available to all nodes, consider <a href="/v2.0-be/registries/connect/">adding a registry</a> to Portainer.</p>
+</div>
 <h2 id="building-an-image-using-our-web-editor">Building an Image using our web editor</h2>
 <p>Go to <b>Images</b> and click <b>Build a new image</b>.</p>
 <p><img alt="build" src="../assets/build-1.png" /></p>

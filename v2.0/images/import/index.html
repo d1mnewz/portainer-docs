@@ -5142,6 +5142,10 @@
                 
                 <h1 id="import-images">Import Images</h1>
 <p>Portainer allows you to import the images that you have created in another Portainer instance or in the CLI of Docker and Docker Swarm.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a multi-node environment, the image you import will only be available on the node you choose under Deployment. If you wish to make the image available to all nodes, consider <a href="/v2.0/registries/connect/">adding a registry</a> to Portainer.</p>
+</div>
 <h2 id="importing-images">Importing Images</h2>
 <p>To import an image using Portainer, go to <b>Images</b> and then click <b>Import</b>.</p>
 <p><img alt="import" src="../assets/import-1.png" /></p>

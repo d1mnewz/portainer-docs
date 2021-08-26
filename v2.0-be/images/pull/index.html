@@ -5142,6 +5142,10 @@
                 
                 <h1 id="pull-images">Pull Images</h1>
 <p>You can pull images from any registry already added to Portainer, see how to <a href="/v2.0-be/registries/connect/">add new registries</a> to Portainer for more information. This option is currently only available, when you manage Docker and Docker Swarm environments.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a multi-node environment, the image you pull will only be available on the node you choose under Deployment. If you wish to make the image available to all nodes, consider <a href="/v2.0-be/registries/connect/">adding a registry</a> to Portainer.</p>
+</div>
 <h2 id="pulling-images">Pulling Images</h2>
 <h3 id="pulling-in-simple-mode">Pulling in Simple Mode</h3>
 <p>To pull images from Docker Hub or another registry that you have connected before you must do the following:
