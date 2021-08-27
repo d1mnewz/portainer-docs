@@ -5143,7 +5143,13 @@
                 <h1 id="how-to-create-a-new-volume">How to create a new volume</h1>
 <p>Volumes are used to make persistent storage that you can manage from Portainer. 
 Note: Creating a standalone volume is only supported in a Docker Swarm and Docker Standalone endpoints.</p>
-<h2 id="creating-a-local-volume">Creating a LOCAL volume</h2>
+<ul>
+<li><a href="#creating-a-local-volume">Creating a local volume</a></li>
+<li><a href="#creating-an-nfs-volume">Creating an NFS volume</a></li>
+<li><a href="#creating-a-cifs-volume">Creating a CIFS volume</a></li>
+<li><a href="#creating-a-tmpfs-volume">Creating a tmpfs volume</a></li>
+</ul>
+<h2 id="creating-a-local-volume">Creating a local volume</h2>
 <p>Click <b>Volumes</b> from the side menu and then click <b>Create Volume</b>.</p>
 <p><img alt="volumes" src="../assets/create_1.png" /></p>
 <p>Complete the detail fields for this volume:</p>
@@ -5193,6 +5199,36 @@ Note: Creating a standalone volume is only supported in a Docker Swarm and Docke
 </ul>
 <p>When this is complete click <b>Create the Volume</b>.</p>
 <p><img alt="volumes" src="../assets/create_5.png" /></p>
+<h2 id="creating-a-tmpfs-volume">Creating a tmpfs volume</h2>
+<p>To create a tmpfs volume within Portainer, go to <b>Volumes</b> and then click on <b>Create volume</b>.</p>
+<p><img alt="volumes" src="../assets/create_1.png" /></p>
+<p>Complete the detail fields for this volume:</p>
+<ul>
+<li>Name: Give your volume a descriptive name.</li>
+<li>Driver configuration: <ul>
+<li>Driver: local</li>
+<li>Driver options: Click <b>add driver option</b> and add the following name/value combinations:<ul>
+<li>name: <code>type</code><br />
+  value: <code>tmpfs</code></li>
+<li>name: <code>device</code><br />
+  value: <code>tmpfs</code></li>
+<li>name: <code>o</code><br />
+  value: <code>size=100m,uid=1000</code>  (customize these values to suit your needs)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="volumes" src="../assets/create_tmpfs_1.png" /></p>
+<ul>
+<li>NFS: Leave this toggle off</li>
+<li>CIFS: Leave this toggle off</li>
+</ul>
+<p>Once complete, click <b>Create the Volume</b>.</p>
+<p>This volume can now be attached to a container in the same way as any other volume:</p>
+<p><img alt="volumes" src="../assets/create_tmpfs_2.png" /></p>
+<p>Once attached, you can confirm the tmpfs volume has been mounted correctly within the container:</p>
+<p><img alt="volumes" src="../assets/create_tmpfs_3.png" /></p>
 <h2 id="notes"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 10h5.5L14 4.5V10M5 3h10l6 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2m0 9v2h14v-2H5m0 4v2h9v-2H5z"/></svg></span> Notes</h2>
 <p><a href="https://github.com/portainer/portainer-docs/blob/master/contributing.md" target="_blank">Contribute to these docs</a></p>
                 
